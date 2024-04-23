@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Task19_Core_empty.Models;
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{//List<PersonModel>
+}
+
+
+@section CustomCSS{
+
+ <!-- <link href="style.css" rel="stylesheet" />
+    -->
+}
+<section class=" section ">
+    <h1 class="reset h1__title">Here is the my Phone Book</h1>
+<h2 class="reset phone-panel__title">My Person Contact</h2>
+
+    @using(Html.BeginForm("Update","MyPersonInfo",FormMethod.Post))
+    {
+        <div class="phone--panel__link-area">
+            <a asp-controller="PhoneBook" asp-action="Index" class="a-reset">Back</a>
+
+            <a class="a-reset a-update" href="#">Update</a>
+            <a class="a-reset a-cancel a-cancel__action" href="#">Cancel</a>
+        </div>
+        <ul class="list-reset phone-panel__list">
+            <li class="phone-panel__item ">
+
+              @Html.Label("Name","Имя", new{@class ="phone-panel__label"})
+            @Html.TextBox("Name",(object)@Model.Name,new{@class ="phone-panel__textbox phone-panel__textbox_action",id="Name"})
+            </li>
+            <li class="phone-panel__item ">
+                @Html.Label("Surname","Фамилия",new{@class ="phone-panel__label"})
+            @Html.TextBox("Surname",(object)@Model.Surname,new{@class ="phone-panel__textbox phone-panel__textbox_action", @id="Surname"})
+            </li>
+           <li class="phone-panel__item ">
+                @Html.Label("Thirdname","Отчество",new{@class ="phone-panel__label"})
+            @Html.TextBox("Thirdname",(object)@Model.ThirdName,new{@class ="phone-panel__textbox phone-panel__textbox_action", @id="Thirdname"})
+            </li>
+              <li class="phone-panel__item ">
+                @Html.Label("Phone","Телефон",new{@class ="phone-panel__label"})
+            @Html.TextBox("Phone",(object)@Model.PhoneNumber,new{@class ="phone-panel__textbox phone-panel__textbox_action", @id="Phone"})
+            </li>
+            <li class="phone-panel__item ">
+                    @Html.Label("Address","Адрес",new{@class ="phone-panel__label"})
+                @Html.TextBox("Address",(object)@Model.Address,new{@class ="phone-panel__textbox phone-panel__textbox_action", @id="Address"})
+                </li>
+            <li class="phone-panel__item ">
+                    @Html.Label("Description","Описание",new{@class ="phone-panel__label"})
+                @Html.TextArea("Description",@Model.Description,5,10,new{@class ="phone-panel__textbox phone-panel__textbox_action", @id="Description"})
+                </li>
+            <li class="phone-panel__item ">
+               <!-- <input type="submit" action="Update" value="Save" class="btn-yellow btn-yellow__action phone-panel__btn-update ">
+                    -->
+                <button type="submit" action="Update" name="Id" value=@Model.Id class="btn-yellow btn-yellow__action phone-panel__btn-update ">saveB</button>
+            </li>
+        </ul>
+    }
+</section>

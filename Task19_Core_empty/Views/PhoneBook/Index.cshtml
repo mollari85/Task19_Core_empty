@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Task19_Core_empty.Models;
+@{//List<PersonModel>
+}
+
+
+@section CustomCSS{
+
+ <!-- <link href="style.css" rel="stylesheet" />
+    -->
+}
+    <h1 class="reset h1__title">Here is the my Phone Book</h1>
+<h2 class="reset phone-panel__title">My book contact</h2>
+    <ul class="list-reset phone-panel__list">
+        @foreach(var i in Model)
+        {
+            <li class="phone-panel__item-general">
+            <a class="a-reset" href="MyPersonInfo/Index/@i.Id">
+                <p>@i.Surname @i.Name @i.Thirdname</p>
+            </a>
+          <!--  <button class="btn-reset phone-panel__btn-open" aria-label="Открытие записи">@i.Surname @i.Name @i.Thirdname </button>
+                -->
+            </li>
+        }
+    </ul>
