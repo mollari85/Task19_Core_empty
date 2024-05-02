@@ -24,5 +24,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+  },
+  "ConnectionStrings": {
+    "DefaultConnectionSQL": "Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True; MultipleActiveResultSets=true"
   }
 }

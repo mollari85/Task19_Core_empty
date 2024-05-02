@@ -95,6 +95,11 @@ body {
 .display-none {
     display:none;
 }
+.hidden {
+    visibility:hidden;
+    max-height:0;
+    max-width:0;
+}
 .img-bckg {
     background-position: center;
     background-repeat: no-repeat;
@@ -244,8 +249,19 @@ body {
 
 }
 
-
-
+.con-link__link {
+    margin:0;
+}
+.phone-panel__con-link {
+    margin:0 auto;
+    margin-bottom:10px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    max-width:300px;
+    
+    
+}
 
 
 .nav__item {

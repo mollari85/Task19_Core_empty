@@ -11,9 +11,16 @@
  <!-- <link href="style.css" rel="stylesheet" />
     -->
 }
+
     <h1 class="reset h1__title">Here is the my Phone Book</h1>
 <h2 class="reset phone-panel__title">My book contact</h2>
+<div class=phone-panel__con-link>
+<a class="a-reset con-link__link" href="MyPersonInfo/Index">
+    Add
+ </a>
+ </div>
     <ul class="list-reset phone-panel__list">
+
         @foreach(var i in Model)
         {
             <li class="phone-panel__item-general">

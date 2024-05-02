@@ -1,25 +1,25 @@
 ﻿
-let searchBtnUpdate = document.querySelector('.phone-panel__btn-update');
-let searchLinkUpdate = document.querySelector('.a-update');
-let searchInput = document.querySelectorAll('.phone-panel__textbox');
+let BtnUpdate = document.querySelector('.phone-panel__btn-update');
+let LinkUpdate = document.querySelector('.a-update');
+let Input = document.querySelectorAll('.phone-panel__textbox');
 
 attr = document.createAttribute("readonly");
-searchLinkUpdate.addEventListener('click', function ()
+LinkUpdate.addEventListener('click', function ()
 {
-    searchLinkUpdate.classList.add('a-update__action');
-    searchLinkCancel.classList.remove('a-cancel__action');
-    searchBtnUpdate.classList.add('btn-update__action');
-    for (el of searchInput) {
+    LinkUpdate.classList.add('a-update__action');
+    LinkCancel.classList.remove('a-cancel__action');
+    BtnUpdate.classList.add('btn-update__action');
+    for (el of Input) {
       //  el.removeAttributeNode(attr);
         el.removeAttribute("readonly");
     }
 });
-let searchLinkCancel = document.querySelector('.a-cancel');
-searchLinkCancel.addEventListener('click', function () {
-    searchLinkCancel.classList.add('a-cancel__action');
-    searchLinkUpdate.classList.remove('a-update__action');
-    searchBtnUpdate.classList.remove('btn-update__action'); 
-    for (el of searchInput) {
+let LinkCancel = document.querySelector('.a-cancel');
+LinkCancel.addEventListener('click', function () {
+    LinkCancel.classList.add('a-cancel__action');
+    LinkUpdate.classList.remove('a-update__action');
+    BtnUpdate.classList.remove('btn-update__action'); 
+    for (el of Input) {
        // el.setAttributeNode(attr);
         el.setAttribute("readonly","");
     }
@@ -28,3 +28,4 @@ searchLinkCancel.addEventListener('click', function () {
 })
 
 
+    

@@ -26,6 +26,14 @@ namespace Task19_Core_empty.Models
 
         public void Add(PersonInfo person) { Book.Add(person); SendModelToJson(); }
         public void Remove(PersonInfo person) { Book.Remove(person); SendModelToJson(); }
+        public void Remove(int? id) 
+        {
+            PersonInfo? x = Book.FirstOrDefault(p => p.Id == id);
+            if (x == null)
+                throw new ArgumentNullException($"Person {id.ToString()} not found");
+            Book.Remove(x); 
+            SendModelToJson(); 
+        }
 
         public void Update(PersonInfo personOld, PersonInfo personUpdated)
         {

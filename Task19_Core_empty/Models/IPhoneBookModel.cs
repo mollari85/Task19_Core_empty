@@ -4,6 +4,7 @@
     {
         public void Add(PersonInfo person);
         public void Remove(PersonInfo person);
+        public void Remove(int? id);
         public void Update(PersonInfo personOld, PersonInfo personUpdated);
         public void Update(PersonInfo personUpdated);
         public IEnumerable<PersonInfo> GetAllPersons();
