@@ -1,14 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+
 using Task19_Core_empty.Models;
 namespace Task19_Core_empty.Controllers
 {
-    public record class PersonInfoDto(int Id, [BindRequired]string Name, [BindRequired]string Surname, string? Thirdname, [BindRequired]string PhoneNumber, string? Address, string? Description);
+    public class PersonInfoDto {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string? Thirdname { get; set;}
+        public string PhoneNumber { get; set;  }
+        public string? Address { get; set; }
+        public string? Description { get; set; }
+    };
     public static class MyPersonInfoExt 
     {
+     
         public static PersonInfoDto ToDTO(this PersonInfo p)
         {           
-            return (new PersonInfoDto(p.Id, p.Name, p.Surname, p.ThirdName, p.PhoneNumber, p.Address, p.Description));
+            return new PersonInfoDto {Id=p.Id, Name=p.Name,Surname= p.Surname, Thirdname=p.ThirdName, 
+                PhoneNumber=p.PhoneNumber, Address=p.Address, Description=p.Description };
         }
         public static void FromDTO(this PersonInfoDto p,PersonInfo person)
         {
